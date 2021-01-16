@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: postres-pod
+  labels:
+    name: postres-pod
+    app: demo-voting-app
+spec:
+  containers:
+    - name: postres
+      image: postres
+      ports:
+        - containerPort: 5432
+      env:
+        - name: POSTGRES_USER
+          value: "postgtes"
+        - name: POSTGRES_PASSWORD
+          value: "postgres"
